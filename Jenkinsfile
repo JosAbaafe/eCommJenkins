@@ -7,18 +7,23 @@ pipeline{
             }
         }
         stage('Build'){
+            agent {
+                docker {
+                    image 'python:3-alpine'
+                }
+            }
             steps{
-                echo %PATH%
+                bat 'pip install -r requirement.txt'
             }
         }
         stage('Unit-Test'){
             steps{
-                sh 'python app/manage.py test'
+                bat 'python app/manage.py test'
             }
         }
         stage('Deploy'){
             steps{
-                echo 'python manage.py runserver'
+                bat 'python manage.py runserver'
             }
         }
     }
