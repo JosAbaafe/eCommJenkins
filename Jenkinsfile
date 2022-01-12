@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-               sh 'pip install -r requirement.txt'
+               sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python tests.py'
             }
         }
         stage('Unit-Test'){
