@@ -6,12 +6,11 @@ pipeline{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '1f76b417-da94-45ee-812d-f68110bddad3', url: 'https://github.com/JosAbaafe/eCommJenkins.git']]])
             }
         }
-        stage('Build'){
-            
-                
+        stage('Build'){    
             steps{
-                echo %python --version%
-                //bat 'pip install -r requirement.txt'
+                
+                bat 'python --version'
+
             }
         }
         stage('Unit-Test'){
