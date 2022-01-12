@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-                echo 'hello'
+                pip install -r requirement.txt
             }
         }
         stage('Unit-Test'){
