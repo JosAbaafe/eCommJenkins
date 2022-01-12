@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-                echo '%PATH%'
+                echo %PATH%
             }
         }
         stage('Unit-Test'){
