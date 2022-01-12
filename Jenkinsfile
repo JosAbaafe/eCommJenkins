@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-                bat 'pip install -r requirement.txt'
+                echo '%PATH%'
             }
         }
         stage('Unit-Test'){
