@@ -7,13 +7,11 @@ pipeline{
             }
         }
         stage('Build'){
-            agent {
-                docker {
-                    image 'python:3-alpine'
-                }
-            }
+            
+                
             steps{
-                bat 'pip install -r requirement.txt'
+                echo %python --version%
+                //bat 'pip install -r requirement.txt'
             }
         }
         stage('Unit-Test'){
